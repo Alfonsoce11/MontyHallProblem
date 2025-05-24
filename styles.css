@@ -1,0 +1,27 @@
+:root {
+    --background: #121212;
+    --font-color: #ffffff;
+    --font: "Roboto Mono"
+}
+html {
+    background: var(--background);
+}
+h1 {
+    text-align: center;
+    font-family: var(--font);
+    color: var(--font-color);
+}
+p {
+    text-align: center;
+    font-family: var(--font);
+    color: var(--font-color)
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 800px) {
+    .flex-container {
+        flex-direction: column;
+    }
+}
