@@ -1,7 +1,7 @@
 :root {
     --background: #121212;
     --font-color: #ffffff;
-    --font: "Roboto Mono"
+    --font: "Roboto Mono", monospace;
 }
 html {
     background: var(--background);
