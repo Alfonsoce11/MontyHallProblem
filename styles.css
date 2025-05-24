@@ -33,7 +33,7 @@ nav {
     height: 50px;
     align-items: center;
     justify-content: left;
-    background: #1f1f1f;
+    background: #252525;
     top: 0px;
     left: 0px;
     right: 0px;
@@ -45,7 +45,12 @@ nav > a {
     padding: 7px;
     position: relative;
     margin: 7px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 nav > a:hover {
-background: darkslategray
+background: #2f4f4f /* darkslategray */
+}
+#titleHeading {
+    margin-top: 75px;
 }
