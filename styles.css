@@ -21,6 +21,10 @@ p {
     font-family: var(--font);
     color: var(--font-color)
 }
+a {
+    text-decoration: none;
+    color: #625bff;
+}
 .flex-container {
   display: flex;
   flex-direction: row;
