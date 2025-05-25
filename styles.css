@@ -58,10 +58,11 @@ background: #2f4f4f /* darkslategray */
     justify-content: space-evenly;
 }
 .door {
-    width: 100px;
+    width: 150px;
     height: 220px;
     background: lightblue;
     transform-origin: left;
+    border-radius: 5px;
 }
 .door:active {
 animation: open-door 0.5s forwards; /* This is a test for the animation. I'm gonna remove this */
