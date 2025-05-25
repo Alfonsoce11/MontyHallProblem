@@ -55,15 +55,16 @@ nav > a:hover {
 background: #2f4f4f /* darkslategray */
 }
 #doors-container {
-    justify-content: center;
+    justify-content: space-evenly;
 }
 .door {
     width: 100px;
     height: 220px;
     background: lightblue;
+    transform-origin: left;
 }
 .door:active {
-animation: open-door 0.5s; /* This is a test for the animation. I'm gonna remove this */
+animation: open-door 0.5s forwards; /* This is a test for the animation. I'm gonna remove this */
 }
 @keyframes open-door {
     0% {
