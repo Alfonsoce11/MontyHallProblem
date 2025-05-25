@@ -54,3 +54,22 @@ nav > a {
 nav > a:hover {
 background: #2f4f4f /* darkslategray */
 }
+#doors-container {
+    justify-content: center;
+}
+.door {
+    width: 100px;
+    height: 220px;
+    background: lightblue;
+}
+.door:active {
+animation: open-door 0.5s; /* This is a test for the animation. I'm gonna remove this */
+}
+@keyframes open-door {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(-120deg)
+    }
+}
