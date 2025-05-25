@@ -5,12 +5,15 @@
 }
 html {
     background: var(--background);
+    color: var(--font-color);
+    font-family: var(--font);
 }
 h1 {
     text-align: center;
     font-family: var(--font);
     color: var(--font-color);
     font-size: 2.5rem;
+    margin-top: 75px;
 }
 p {
     text-align: center;
@@ -50,7 +53,4 @@ nav > a {
 }
 nav > a:hover {
 background: #2f4f4f /* darkslategray */
-}
-#titleHeading {
-    margin-top: 75px;
 }
