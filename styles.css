@@ -69,9 +69,9 @@ background: #2f4f4f /* darkslategray */
     transform-origin: left;
     border-radius: 5px;
 }
-.door:active {
-animation: open-door 0.5s forwards; /* This is a test for the animation. I'm gonna remove this */
-}
+/* .door:active {
+animation: open-door 0.5s forwards; This is just to test the animation. 
+} */
 @keyframes open-door {
     0% {
         transform: rotateY(0deg);
