@@ -4,6 +4,10 @@ const doors = [
     document.getElementById("door2"),
     document.getElementById("door3")
 ]
+let switchWins = 0;
+let switchLoses = 0;
+let stayWins = 0;
+let stayLoses = 0;
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
