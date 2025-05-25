@@ -80,3 +80,6 @@ animation: open-door 0.5s forwards; /* This is a test for the animation. I'm gon
     margin-top: 10px;
     color: black;
 }
+.left-align {
+    text-align: left;
+}
