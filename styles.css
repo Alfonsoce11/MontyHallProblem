@@ -27,6 +27,10 @@ p {
 @media (max-width: 800px) {
     .flex-container {
         flex-direction: column;
+        align-items: center;
+    }
+    .door {
+        margin-bottom: 20px;
     }
 }
 nav {
