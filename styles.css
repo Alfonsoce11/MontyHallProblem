@@ -76,6 +76,7 @@ animation: open-door 0.5s forwards; /* This is a test for the animation. I'm gon
     }
 }
 .door-number {
-    font-size: 75%;
-    margin-top: 10px
+    font-size: 75px;
+    margin-top: 10px;
+    color: black;
 }
