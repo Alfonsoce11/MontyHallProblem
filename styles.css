@@ -63,7 +63,7 @@ background: #2f4f4f /* darkslategray */
 }
 .door {
     width: 150px;
-    height: 220px;
+    height: 250px;
     background: lightblue;
     transform-origin: left;
     border-radius: 5px;
