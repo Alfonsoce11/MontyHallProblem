@@ -18,4 +18,9 @@ function shuffle(array) {
 doors.forEach((door, i) => {
     shuffle(behindDoors);
     door.data-behindDoor = behindDoors[i];
+    door.addEventListener('click', doorClick);
 });
+
+function doorClick() {
+  
+}
