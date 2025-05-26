@@ -1,4 +1,2 @@
 # MontyHallProblem
-I recently found out about the monty hall problem and though it was really interesting. So I decided to make a simulation of it.
-
-NOTE: This is project is not finished. Hopefully I'll be able to finish it within a few days. I just need to finish the simulation, which will probably be the hardest part.
+I recently found out about the monty hall problem and though it was really interesting. So I decided to make a website about it. It has a home page, a simulation, an explanation, and an about page. I really found the problem interesting since I think it reminds us to to think logically about situations instead of just coming up with intuitive assumptions.
