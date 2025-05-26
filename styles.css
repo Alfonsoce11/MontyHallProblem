@@ -76,6 +76,7 @@ background: #2f4f4f /* darkslategray */
     overflow: hidden;
     position: relative;
     transform-style: preserve-3d;
+    cursor: pointer;
 }
 /* .door:active {
 animation: open-door 0.5s forwards; This is just to test the animation. 

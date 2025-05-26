@@ -4,6 +4,7 @@ const doors = [
     document.getElementById("door2"),
     document.getElementById("door3")
 ]
+const doorContainer = document.querySelectorAll('.door-container');
 let switchWins = 0;
 let switchLoses = 0;
 let stayWins = 0;
@@ -15,6 +16,10 @@ doors.forEach((door) => {
   door.style.animation = "";
   door.children[1].innerText = "";
 });
+
+doorContainer.forEach(container => {
+  container.onclick = null;
+})
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -32,13 +37,13 @@ doors.forEach((door, i) => {
     }
 });
 
+doors.forEach((door) => {
+  door.onclick = () => doorClick(door);
+})
+
 }
 
-doors.forEach((door) => {
-  door.addEventListener('click', () => {
-    doorClick(door);
-  })
-});
+
 
 set();
 
@@ -50,8 +55,57 @@ function doorClick(door) {
     let otherWinDoor = otherDoors.find(item => item.dataset.behindDoor === 'win');
     otherLoseDoor.style.animation = "open-door 0.5s forwards";
     otherWinDoor.children[1].innerText = "Click here to switch"
+    otherLoseDoor.onclick = null;
+    door.onclick = () => {
+      doors.forEach(unopenedDoor => unopenedDoor.style.animation = "open-door 0.5s forwards");
+      if (door.dataset.behindDoor === 'lose') {
+        stayLoses++;
+      } else if (door.dataset.behindDoor === 'win') {
+        stayWins++;
+      }
+      document.getElementById("stay-wins").innerText = `${stayWins}`;
+      document.getElementById("stay-wins-percentage").innerText = `${(stayWins/(stayWins+stayLoses)) * 100}`;
+      document.getElementById("stay-loses").innerText = `${stayLoses}`;
+      document.getElementById("stay-loses-percentage").innerText = `${(stayLoses/(stayWins+stayLoses)) * 100}`;
+      door.onclick = null;
+    }
+    otherWinDoor.onclick = () => {
+      doors.forEach(unopenedDoor => unopenedDoor.style.animation = "open-door 0.5s forwards");
+      switchWins++;
+      document.getElementById("switch-wins").innerText = `${switchWins}`;
+      document.getElementById("switch-wins-percentage").innerText = `${(switchWins/(switchWins+switchLoses)) * 100}`;
+      document.getElementById("switch-loses").innerText = `${switchLoses}`;
+      document.getElementById("switch-loses-percentage").innerText = `${(switchLoses/(switchWins+switchLoses)) * 100}`;
+      otherWinDoor.onclick = null;
+    }
   } else if (door.dataset.behindDoor == "win") {
-    otherDoors[Math.round(Math.random())].style.animation = "open-door 0.5s forwards";
+    let randomLoseDoor = otherDoors[Math.round(Math.random())];
+    randomLoseDoor.style.animation = "open-door 0.5s forwards";
+    notChosenLoseDoor = otherDoors.find((item => item !== randomLoseDoor))
+    notChosenLoseDoor.children[1].innerText = "Click here to switch";
+    randomLoseDoor.onclick = null;
+    door.onclick = () => {
+      doors.forEach(unopenedDoor => unopenedDoor.style.animation = "open-door 0.5s forwards");
+      if (door.dataset.behindDoor === 'lose') {
+        stayLoses++;
+      } else if (door.dataset.behindDoor === 'win') {
+        stayWins++;
+      }
+      document.getElementById("stay-wins").innerText = `${stayWins}`;
+      document.getElementById("stay-wins-percentage").innerText = `${(stayWins/(stayWins+stayLoses)) * 100}`;
+      document.getElementById("stay-loses").innerText = `${stayLoses}`;
+      document.getElementById("stay-loses-percentage").innerText = `${(stayLoses/(stayWins+stayLoses)) * 100}`;
+      door.onclick = null;
+    }
+    notChosenLoseDoor.onclick = () => {
+      doors.forEach(unopenedDoor => unopenedDoor.style.animation = "open-door 0.5s forwards");
+      switchLoses++;
+      document.getElementById("switch-wins").innerText = `${switchWins}`;
+      document.getElementById("switch-wins-percentage").innerText = `${(switchWins/(switchWins+switchLoses)) * 100}`;
+      document.getElementById("switch-loses").innerText = `${switchLoses}`;
+      document.getElementById("switch-loses-percentage").innerText = `${(switchLoses/(switchWins+switchLoses)) * 100}`;
+      notChosenLoseDoor.onclick = null;
+    }
   }
 }
 
