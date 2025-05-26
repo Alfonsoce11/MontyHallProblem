@@ -92,3 +92,6 @@ animation: open-door 0.5s forwards; This is just to test the animation.
 .left-align {
     text-align: left;
 }
+.status {
+    color: black;
+}

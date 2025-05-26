@@ -24,10 +24,12 @@ doors.forEach((door, i) => {
 });
 
 function doorClick(door) {
-  door.children[1].innerText = "Selected";
+  door.children[1].innerText = "Click here to stay";
   if (door.dataset.behindDoor == "lose") {
     let otherDoors = doors.filter(item => item !== door);
     let otherLoseDoor = otherDoors.find(item => item === 'lose');
-    otherLoseDoor.styles.animation = "open-door 0.5s forwards";
+    let otherWinDoor = otherDoors.find(item => item === 'win');
+    otherLoseDoor.style.animation = "open-door 0.5s forwards";
+    otherWinDoor.innerText = "Click here to switch"
   }
 }
