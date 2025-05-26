@@ -82,7 +82,15 @@ animation: open-door 0.5s forwards; This is just to test the animation.
         transform: rotateY(0deg);
     }
     100% {
-        transform: rotateY(-120deg)
+        transform: rotateY(-120deg);
+    }
+}
+@keyframes counter-rotation {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(120deg);
     }
 }
 .door-number {
@@ -99,8 +107,8 @@ animation: open-door 0.5s forwards; This is just to test the animation.
 .winOrLoseImg {
     position: absolute;
     margin: auto;
-    transform: none;
     width: 90%;
     height: auto;
     object-fit: contain;
+    z-index: -2;
 }
