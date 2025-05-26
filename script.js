@@ -36,6 +36,6 @@ function doorClick(door) {
     let otherWinDoor = otherDoors.find(item => item.dataset.behindDoor === 'win');
     otherLoseDoor.style.animation = "open-door 0.5s forwards";
     otherLoseDoor.children[2].style.animation = "counter-rotation 0.5s forwards";
-    otherWinDoor.innerText = "Click here to switch"
+    otherWinDoor.children[1].innerText = "Click here to switch"
   }
 }
