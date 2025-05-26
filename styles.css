@@ -72,6 +72,7 @@ background: #2f4f4f /* darkslategray */
     background: lightblue;
     transform-origin: left;
     border-radius: 5px;
+    overflow: hidden;
 }
 /* .door:active {
 animation: open-door 0.5s forwards; This is just to test the animation. 
@@ -96,5 +97,10 @@ animation: open-door 0.5s forwards; This is just to test the animation.
     color: black;
 }
 .winOrLoseImg {
+    position: absolute;
+    margin: auto;
     transform: none;
+    width: 90%;
+    height: auto;
+    object-fit: contain;
 }
