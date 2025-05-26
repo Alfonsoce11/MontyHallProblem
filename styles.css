@@ -95,3 +95,6 @@ animation: open-door 0.5s forwards; This is just to test the animation.
 .status {
     color: black;
 }
+.winOrLoseImg {
+    transform: none;
+}

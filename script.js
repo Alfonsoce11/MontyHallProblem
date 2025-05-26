@@ -21,6 +21,11 @@ doors.forEach((door, i) => {
     door.addEventListener('click', () => {
       doorClick(door);
     });
+    if (door.dataset.behindDoor == "lose") {
+      door.children[2].src = "goat.png";
+    } else if (door.dataset.behindDoor == "win") {
+      door.children[2].src = "money.png";
+    }
 });
 
 function doorClick(door) {
