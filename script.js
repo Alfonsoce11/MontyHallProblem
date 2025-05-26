@@ -9,6 +9,13 @@ let switchLoses = 0;
 let stayWins = 0;
 let stayLoses = 0;
 
+function set() {
+
+doors.forEach((door) => {
+  door.style.animation = "";
+  door.children[1].innerText = "";
+});
+
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -18,15 +25,22 @@ function shuffle(array) {
 shuffle(behindDoors);
 doors.forEach((door, i) => {
     door.dataset.behindDoor = behindDoors[i];
-    door.addEventListener('click', () => {
-      doorClick(door);
-    });
     if (door.dataset.behindDoor == "lose") {
-      door.children[2].src = "goat.png";
+      door.nextElementSibling.src = "goat.png";
     } else if (door.dataset.behindDoor == "win") {
-      door.children[2].src = "money.png";
+      door.nextElementSibling.src = "money.png";
     }
 });
+
+}
+
+doors.forEach((door) => {
+  door.addEventListener('click', () => {
+    doorClick(door);
+  })
+});
+
+set();
 
 function doorClick(door) {
   door.children[1].innerText = "Click here to stay";
@@ -35,7 +49,8 @@ function doorClick(door) {
     let otherLoseDoor = otherDoors.find(item => item.dataset.behindDoor === 'lose');
     let otherWinDoor = otherDoors.find(item => item.dataset.behindDoor === 'win');
     otherLoseDoor.style.animation = "open-door 0.5s forwards";
-    otherLoseDoor.children[2].style.animation = "counter-rotation 0.5s forwards";
     otherWinDoor.children[1].innerText = "Click here to switch"
   }
 }
+
+document.getElementById("doorReset").addEventListener('click', set)

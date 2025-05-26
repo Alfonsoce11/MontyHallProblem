@@ -14,23 +14,31 @@
       <a href="about.html">About</a>
     </nav>
     <h1>Simulation</h1>
+    <p>Pick a door!</p>
     <div class="flex-container" id="doors-container">
+      <div class="door-container">
         <div class="door" id="door1">
             <p class="door-number">1</p>
-            <p id="status1" class="status"></p>
-            <img id="img1" class="winOrLoseImg">
+            <p id="status1" class="status"></p>            
         </div>
+        <img id="img1" class="winOrLoseImg">
+      </div>
+      <div class="door-container">
         <div class="door" id="door2">
             <p class="door-number">2</p>
             <p id="status2" class="status"></p>
-            <img id="img2" class="winOrLoseImg">
         </div>
+        <img id="img2" class="winOrLoseImg">
+      </div>
+      <div class="door-container">
         <div class="door" id="door3">
             <p class="door-number">3</p>
             <p id="status3" class="status"></p>
-            <img id="img3" class="winOrLoseImg">
         </div>
+        <img id="img3" class="winOrLoseImg">
+      </div>
     </div>
+    <button id="doorReset">Reset Doors</button>
     <div id="score">
         <br>
         <p class="left-align">When switching:</p>
