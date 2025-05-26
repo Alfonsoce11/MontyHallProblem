@@ -17,10 +17,17 @@ function shuffle(array) {
 }
 doors.forEach((door, i) => {
     shuffle(behindDoors);
-    door.data-behindDoor = behindDoors[i];
-    door.addEventListener('click', doorClick);
+    door.dataset.behindDoor = behindDoors[i];
+    door.addEventListener('click', () => {
+      doorClick(door)
+    });
 });
 
-function doorClick() {
-  
+function doorClick(door) {
+  door.children[1].innerText = "Selected";
+  if (door.dataset.behindDoor == "lose") {
+    let otherDoors = doors.filter(item => item !== door);
+    let otherLoseDoor = otherDoors.find(item => item === 'lose');
+    otherLoseDoor.styles.animation = "open-door 0.5s forwards";
+  }
 }
