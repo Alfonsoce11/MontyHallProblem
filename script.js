@@ -44,12 +44,14 @@ set();
 
 function doorClick(door) {
   door.children[1].innerText = "Click here to stay";
+  let otherDoors = doors.filter(item => item !== door);
   if (door.dataset.behindDoor == "lose") {
-    let otherDoors = doors.filter(item => item !== door);
     let otherLoseDoor = otherDoors.find(item => item.dataset.behindDoor === 'lose');
     let otherWinDoor = otherDoors.find(item => item.dataset.behindDoor === 'win');
     otherLoseDoor.style.animation = "open-door 0.5s forwards";
     otherWinDoor.children[1].innerText = "Click here to switch"
+  } else if (door.dataset.behindDoor == "win") {
+    otherDoors[Math.round(Math.random())].style.animation = "open-door 0.5s forwards";
   }
 }
 
