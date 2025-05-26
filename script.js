@@ -15,11 +15,11 @@ function shuffle(array) {
     [array[i], array[j]] = [array[j], array[i]];
   }
 }
+shuffle(behindDoors);
 doors.forEach((door, i) => {
-    shuffle(behindDoors);
     door.dataset.behindDoor = behindDoors[i];
     door.addEventListener('click', () => {
-      doorClick(door)
+      doorClick(door);
     });
 });
 
@@ -27,8 +27,8 @@ function doorClick(door) {
   door.children[1].innerText = "Click here to stay";
   if (door.dataset.behindDoor == "lose") {
     let otherDoors = doors.filter(item => item !== door);
-    let otherLoseDoor = otherDoors.find(item => item === 'lose');
-    let otherWinDoor = otherDoors.find(item => item === 'win');
+    let otherLoseDoor = otherDoors.find(item => item.dataset.behindDoor === 'lose');
+    let otherWinDoor = otherDoors.find(item => item.dataset.behindDoor === 'win');
     otherLoseDoor.style.animation = "open-door 0.5s forwards";
     otherWinDoor.innerText = "Click here to switch"
   }
